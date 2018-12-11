@@ -1,7 +1,6 @@
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class StringTest {
     @Test
@@ -10,8 +9,8 @@ public class StringTest {
         String s = "\t abc \n";
 
         //when
-        assertEquals("abc", s.trim());
-        assertEquals("abc", s.strip());
+        assertAll(() -> assertEquals("abc", s.trim()),
+                  () -> assertEquals("abc", s.strip()));
     }
 
     @Test
@@ -25,8 +24,8 @@ public class StringTest {
         String s = c + "abc" + c;
 
         //when
-        assertTrue(Character.isWhitespace(c));
-        assertEquals(s, s.trim());
-        assertEquals("abc", s.strip());
+        assertAll(() -> assertTrue(Character.isWhitespace(c)),
+                  () -> assertEquals(s, s.trim()),
+                  () -> assertEquals("abc", s.strip()));
     }
 }
