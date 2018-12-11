@@ -22,6 +22,7 @@ public class LocalVariableTypeInference {
 
         var inputStream = socket.getInputStream();
 
+
         // Diamond operator and Generic Methods
         List<String> names = new ArrayList<>();
 
@@ -33,12 +34,14 @@ public class LocalVariableTypeInference {
 
         var v4 = new ArrayList<>();                 // ArrayList<Object>
 
+        var v5 = new ArrayList<String>();           // ArrayList<String>
+
     }
 
     // Programming to the interface
 
     List<String> getNames(List<String> initialNames) {
-        var names = new ArrayList<>(initialNames);
+        List<String> names = new ArrayList<>(initialNames);
 
         // Some logic regarding names
 
