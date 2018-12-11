@@ -1,27 +1,52 @@
 import java.util.stream.Stream;
 
 public class StringMethods {
+
+    static String evaluateStringRepeat(String greeting, String sound) {
+        return greeting + " " + sound.repeat(3);
+    }
+
+    static Stream<String> evaluateStringLines(String greeting) {
+        return greeting.lines();
+    }
+
+    static void evaluateStringIsBlank(String text) {
+        System.out.println(text.isBlank());
+    }
+
+    static void evaluateStringStrip(String text) {
+        System.out.println("String.strip(): [" + text.strip() + "]");
+    }
+
+    static void evaluateStringStripLeading(String text) {
+        System.out.println("String.stripLeading(): [" + text.stripLeading() + "]");
+    }
+
+    static void evaluateStringStripTrailing(String text) {
+        System.out.println("String.stripTrailing(): [" + text.stripTrailing() + "]");
+    }
+
     public static void main(String[] args) {
         //String.repeat()
-        String greeting = "Merry Christmas";
-        String sound = "Ho";
-        String santa = greeting + " " + sound.repeat(3);
-        System.out.println("\nString.repeat()\n" + santa);
+        String santa = evaluateStringRepeat("Merry Christmas", "Ho");
+        System.out.println("\nSanta be like: \n" + santa);
 
         //String.lines()
-        final String originalString = greeting +"\nand\nHappy New Year\n!!!";
-        final Stream<String> strings = originalString.lines();
-        System.out.println("\nString.lines()");
-        strings.forEach(System.out::println);
+        Stream<String> people = evaluateStringLines("Merry Christmas\nand\nHappy New Year");
+        System.out.println("\nPeople be like: ");
+        people.forEach(System.out::println);
 
         //String.isBlank()
-        String topic = "    ";
-        System.out.println("\nString.isBlank()\n" + topic.isBlank());
+        String text = "    ";
+        System.out.println("\nInitial String: [" + text + "]");
+        evaluateStringIsBlank(text);
 
         //String.strip(); String.stripLeading(); String.stripTrailing()
-        String s = "   sna ke   ";
-        System.out.println("\nString.strip()\n[" + s.strip() + "]");
-        System.out.println("\nString.stripLeading()\n[" + s.stripLeading() + "]");
-        System.out.println("\nString.stripTrailing()\n[" + s.stripTrailing() + "]");
+        text = "   sna ke   ";
+        System.out.println("\nInitial String: [" + text + "]");
+        evaluateStringStrip(text);
+        evaluateStringStripLeading(text);
+        evaluateStringStripTrailing(text);
+
     }
 }
