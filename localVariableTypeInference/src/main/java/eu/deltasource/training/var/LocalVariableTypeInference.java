@@ -1,6 +1,7 @@
 package eu.deltasource.training.var;
 
 import java.io.IOException;
+import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,7 +9,18 @@ import java.util.List;
  * Created by Vasil Filipov - Delta Source Bulgaria on 10.12.18
  */
 public class LocalVariableTypeInference {
+
+    private static Integer getSomething() {
+        return 5;
+    }
+
     public static void main(String[] args) throws IOException {
+
+        var x = getSomething();
+
+        var socket = new Socket();
+
+        var inputStream = socket.getInputStream();
 
         // Diamond operator and Generic Methods
         List<String> names = new ArrayList<>();
@@ -24,10 +36,12 @@ public class LocalVariableTypeInference {
     }
 
     // Programming to the interface
+
     List<String> getNames(List<String> initialNames) {
-        List<String> names = new ArrayList<>(initialNames);
+        var names = new ArrayList<>(initialNames);
 
         // Some logic regarding names
+
 
         return names;
     }
