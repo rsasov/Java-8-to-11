@@ -19,19 +19,18 @@ public class VarBeforeAfter {
         Socket socket = new Socket();
 
         // Before
-        try(InputStream inputStream = socket.getInputStream();
-            InputStreamReader inputStreamReader = new InputStreamReader(inputStream, UTF_8);
-            BufferedReader bufferedReader = new BufferedReader(inputStreamReader)) {
+        try (InputStream inputStream = socket.getInputStream();
+             InputStreamReader inputStreamReader = new InputStreamReader(inputStream, UTF_8);
+             BufferedReader bufferedReader = new BufferedReader(inputStreamReader)) {
             // Do something with buffered reader here..
         }
 
         // After
-        try(var inputStream = socket.getInputStream();
-            var inputStreamReader = new InputStreamReader(inputStream, UTF_8);
-            var bufferedReader = new BufferedReader(inputStreamReader)) {
+        try (var inputStream = socket.getInputStream();
+             var inputStreamReader = new InputStreamReader(inputStream, UTF_8);
+             var bufferedReader = new BufferedReader(inputStreamReader)) {
             // Do something with buffered reader here..
         }
-
 
 
         Map<String, Integer> keysWithValues = new HashMap<>();
