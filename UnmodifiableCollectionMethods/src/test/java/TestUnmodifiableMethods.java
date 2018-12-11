@@ -8,21 +8,23 @@ import static org.junit.jupiter.api.Assertions.*;
 public class TestUnmodifiableMethods {
     @Test
     public void testUnModifiableList() {
-        //Given
+        //given
         List<String> values = List.of("delta","source");
-        //When
+
+        //when
         assertThrows(UnsupportedOperationException.class,()->values.add("eu"));
     }
 
     @Test
     public void testUnmodifiableCopy() {
-        //Given
+        //given
         List<String> values = new ArrayList<>();
         values.add("delta");
         values.add("source");
         values.add("eu");
         List<String> copyValues = List.copyOf(values);
-        //When
+
+        //when
         assertThrows(UnsupportedOperationException.class,()->copyValues.add("foo"));
     }
 }
