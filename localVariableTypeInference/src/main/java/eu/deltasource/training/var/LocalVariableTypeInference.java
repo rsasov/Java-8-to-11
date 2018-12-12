@@ -16,10 +16,12 @@ public class LocalVariableTypeInference {
 
     public static void main(String[] args) throws IOException {
 
+        // Looks wrong
         var x = getSomething();
 
         var socket = new Socket();
 
+        // Looks better
         var inputStream = socket.getInputStream();
 
 
@@ -35,16 +37,13 @@ public class LocalVariableTypeInference {
         var v4 = new ArrayList<>();                 // ArrayList<Object>
 
         var v5 = new ArrayList<String>();           // ArrayList<String>
-
     }
 
     // Programming to the interface
-
     List<String> getNames(List<String> initialNames) {
         List<String> names = new ArrayList<>(initialNames);
 
         // Some logic regarding names
-
 
         return names;
     }

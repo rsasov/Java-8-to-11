@@ -7,13 +7,14 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.time.Duration;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
 
 /**
  * Created by Vasil Filipov - Delta Source Bulgaria on 11.12.18
  */
 public class SendRequestAsynchronous {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ExecutionException, InterruptedException {
 
         // Create Request
         HttpRequest request = HttpRequest.newBuilder()
@@ -21,6 +22,7 @@ public class SendRequestAsynchronous {
                 .timeout(Duration.ofMinutes(1))
                 .header("Content-Type", "application/json")
                 .POST(HttpRequest.BodyPublishers.ofString("some string"))
+                .GET()
                 .build();
 
         // Create Client
