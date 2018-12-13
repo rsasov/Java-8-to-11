@@ -25,7 +25,9 @@ public class OptionalTest {
         Optional<String> value = Optional.of("a");
 
         // when
-        List<String> collect = value.stream().map(String::toUpperCase).collect(Collectors.toList());
+        List<String> collect = value.stream()
+                                    .map(String::toUpperCase)
+                                    .collect(Collectors.toList());
 
         // then
         assertTrue(collect.equals(List.of("A")));
@@ -37,8 +39,8 @@ public class OptionalTest {
 
         // when
         List<String> collect = value.stream()
-                .map(String::toUpperCase)
-                .collect(Collectors.toList());
+                                    .map(String::toUpperCase)
+                                    .collect(Collectors.toList());
 
         // then
         assertTrue(collect.isEmpty());

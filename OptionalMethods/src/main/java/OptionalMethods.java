@@ -22,6 +22,5 @@ public class OptionalMethods {
 
         //Optional.ifPresentOrElse
         evaluateOptionalIfPresentOrElse(optionalEmpty);
-
     }
 }
