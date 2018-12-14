@@ -22,7 +22,6 @@ public class SendRequestAsynchronous {
                 .timeout(Duration.ofMinutes(1))
                 .header("Content-Type", "application/json")
                 .POST(HttpRequest.BodyPublishers.ofString("some string"))
-                .GET()
                 .build();
 
         // Create Client

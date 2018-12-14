@@ -41,6 +41,7 @@ public class LocalVariableTypeInference {
 
     // Programming to the interface
     List<String> getNames(List<String> initialNames) {
+        // Change to var
         List<String> names = new ArrayList<>(initialNames);
 
         // Some logic regarding names
